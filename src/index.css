@@ -6,62 +6,62 @@
 
 @layer base {
   :root {
-    /* Base colors */
-    --background: 240 10% 98%;
-    --foreground: 222 20% 11%;
+    /* Base colors - Velluto inspired */
+    --background: 40 20% 95%;
+    --foreground: 25 25% 15%;
 
     /* Card system */
     --card: 0 0% 100%;
-    --card-foreground: 222 20% 11%;
+    --card-foreground: 25 25% 15%;
 
-    /* Primary brand colors - Professional green system */
-    --primary: 142 72% 29%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 142 65% 35%;
-    --primary-dark: 142 80% 25%;
+    /* Primary brand colors - Rich burgundy */
+    --primary: 15 45% 35%;
+    --primary-foreground: 40 20% 95%;
+    --primary-light: 15 40% 45%;
+    --primary-dark: 15 50% 25%;
 
     /* Secondary system */
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 20% 11%;
+    --secondary: 40 15% 90%;
+    --secondary-foreground: 25 25% 15%;
 
-    /* Success & states */
-    --success: 145 63% 42%;
+    /* Success & CTA - Elegant green */
+    --success: 145 60% 45%;
     --success-foreground: 0 0% 100%;
     --warning: 38 92% 50%;
-    --warning-foreground: 222 20% 11%;
-    --error: 0 84% 60%;
+    --warning-foreground: 25 25% 15%;
+    --error: 0 75% 55%;
     --error-foreground: 0 0% 100%;
 
     /* Neutral system */
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222 20% 11%;
+    --muted: 40 15% 90%;
+    --muted-foreground: 25 15% 50%;
+    --accent: 40 15% 90%;
+    --accent-foreground: 25 25% 15%;
 
     /* Border & input */
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 142 72% 29%;
+    --border: 40 12% 85%;
+    --input: 40 12% 85%;
+    --ring: 15 45% 35%;
 
     /* Destructive */
-    --destructive: 0 84% 60%;
+    --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Checkout specific */
-    --checkout-bg: 240 15% 96%;
-    --checkout-header: 0 0% 100%;
-    --checkout-step-active: 142 72% 29%;
-    --checkout-step-completed: 145 63% 42%;
-    --checkout-step-inactive: 215 16% 47%;
+    /* Checkout specific - Velluto style */
+    --checkout-bg: 40 20% 95%;
+    --checkout-header: 15 45% 35%;
+    --checkout-step-active: 15 45% 35%;
+    --checkout-step-completed: 145 60% 45%;
+    --checkout-step-inactive: 25 15% 50%;
 
-    /* Shadows */
-    --shadow-soft: 0 2px 8px -2px hsl(142 72% 29% / 0.1);
-    --shadow-medium: 0 4px 12px -4px hsl(142 72% 29% / 0.15);
-    --shadow-strong: 0 8px 25px -8px hsl(142 72% 29% / 0.25);
+    /* Elegant shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(15 45% 35% / 0.1);
+    --shadow-medium: 0 4px 12px -4px hsl(15 45% 35% / 0.15);
+    --shadow-strong: 0 8px 25px -8px hsl(15 45% 35% / 0.25);
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(142 72% 29%), hsl(142 65% 35%));
-    --gradient-success: linear-gradient(135deg, hsl(145 63% 42%), hsl(145 70% 48%));
+    /* Rich gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(15 45% 35%), hsl(15 40% 45%));
+    --gradient-success: linear-gradient(135deg, hsl(145 60% 45%), hsl(145 65% 50%));
     
     --radius: 0.75rem;
   }
@@ -91,7 +91,8 @@
   }
 
   body {
-    @apply bg-checkout-bg text-foreground font-sans antialiased;
+    @apply bg-checkout-bg text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 

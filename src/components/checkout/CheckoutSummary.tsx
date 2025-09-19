@@ -181,13 +181,13 @@ export const CheckoutSummary = ({ hasExtraOffer, onToggleOffer }: CheckoutSummar
                       <p className="font-bold text-xl text-primary">R$ 29,00</p>
                     </div>
                     
-                    <Button
+                     <Button
                       onClick={handleToggleOffer}
                       className={cn(
-                        "transition-all duration-300 font-semibold",
+                        "transition-all duration-300 font-semibold shadow-soft",
                         hasExtraOffer ? 
                           "bg-muted hover:bg-muted/80 text-muted-foreground" : 
-                          "bg-gradient-primary hover:opacity-90"
+                          "bg-primary hover:bg-primary/90 text-primary-foreground"
                       )}
                     >
                       {hasExtraOffer ? (
