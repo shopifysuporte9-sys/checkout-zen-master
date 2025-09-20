@@ -60,15 +60,17 @@ export const CheckoutSummary = ({ hasExtraOffer, onToggleOffer }: CheckoutSummar
               <ChevronDown
                 className={cn(
                   "h-4 w-4 transition-transform",
-                  isCollapsed && "rotate-180"
+                  !isCollapsed && "rotate-180"
                 )}
               />
             </Button>
           </div>
         </CardHeader>
 
-        <CardContent className="space-y-4 transition-all duration-300 hidden">
-          {/* Always collapsed */}
+        <CardContent className={cn(
+          "space-y-4 transition-all duration-300",
+          isCollapsed && "lg:block hidden"
+        )}>
           {/* Price Breakdown */}
           <div className="space-y-3 text-sm">
             <div className="flex justify-between">

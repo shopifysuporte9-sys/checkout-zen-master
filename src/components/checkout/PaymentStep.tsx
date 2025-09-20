@@ -75,8 +75,8 @@ export const PaymentStep = ({ data, updateData, onFinalize, isLoading }: Payment
               <span className="font-bold text-warning">🔥 VOCÊ TEM 1 OFERTA!</span>
             </div>
             
-            <div className="flex items-center justify-between">
-              <div className="flex-1">
+            <div className="text-center space-y-3">
+              <div>
                 <p className="font-medium text-sm">
                   ADICIONE +5 CUECAS ÁRABES POR
                 </p>
@@ -85,24 +85,18 @@ export const PaymentStep = ({ data, updateData, onFinalize, isLoading }: Payment
               </div>
               
               <Button
-                onClick={() => updateData('hasExtraOffer', true)}
-                size="sm"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                onClick={() => updateData('hasExtraOffer', !data.hasExtraOffer)}
+                className={data.hasExtraOffer 
+                  ? "w-full bg-success hover:bg-success/90 text-success-foreground" 
+                  : "w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                }
               >
-                Adicionar
+                {data.hasExtraOffer ? "✓ Adicionado" : "Adicionar"}
               </Button>
             </div>
           </div>
         </CardContent>
       </Card>
-
-      {/* Product Description */}
-      <div className="text-center space-y-2 py-4">
-        <p className="font-semibold text-primary">Por que você está comprando:</p>
-        <p className="text-muted-foreground">
-          Cueca Árabe Premium Kit Luxo Masculino (5 unidades)
-        </p>
-      </div>
 
       {/* Finalize Button */}
       <motion.div
