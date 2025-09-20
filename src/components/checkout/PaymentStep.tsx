@@ -16,7 +16,7 @@ const basePrice = 49.00;
 const extraOfferPrice = 29.00;
 const pixDiscount = 0.05; // 5%
 
-export const PaymentStep = ({ data, onFinalize, isLoading }: PaymentStepProps) => {
+export const PaymentStep = ({ data, updateData, onFinalize, isLoading }: PaymentStepProps) => {
   const calculateTotal = () => {
     let total = basePrice;
     if (data.hasExtraOffer) {
@@ -73,6 +73,33 @@ export const PaymentStep = ({ data, onFinalize, isLoading }: PaymentStepProps) =
               </span>
             </p>
           </div>
+
+          {/* Order Bump inside PIX */}
+          {!data.hasExtraOffer && (
+            <div className="mt-6 p-4 bg-warning/10 border border-warning/20 rounded-lg">
+              <div className="flex items-center space-x-2 mb-3">
+                <span className="font-bold text-warning text-sm">🔥 OFERTA ESPECIAL</span>
+              </div>
+              
+              <div className="flex items-center justify-between">
+                <div className="flex-1">
+                  <p className="font-medium text-sm">
+                    Adicione +5 Cuecas Árabes
+                  </p>
+                  <p className="text-xs text-muted-foreground line-through">R$ 49,90</p>
+                  <p className="font-bold text-primary">R$ 29,00</p>
+                </div>
+                
+                <Button
+                  onClick={() => updateData('hasExtraOffer', true)}
+                  size="sm"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                >
+                  Adicionar
+                </Button>
+              </div>
+            </div>
+          )}
         </CardContent>
       </Card>
 

@@ -41,11 +41,6 @@ export const DeliveryStep = ({ data, updateData, nextStep, prevStep }: DeliveryS
         updateData('neighborhood', data.neighborhood || '');
         updateData('city', data.city || '');
         updateData('state', data.state || '');
-        
-        toast({
-          title: "CEP encontrado!",
-          description: `${data.city} - ${data.state}`,
-        });
       }
     } catch (error) {
       toast({
@@ -95,7 +90,7 @@ export const DeliveryStep = ({ data, updateData, nextStep, prevStep }: DeliveryS
             )}
           </div>
           {data.city && data.state && (
-            <p className="text-sm text-primary font-medium">
+            <p className="text-sm text-success font-bold">
               {data.city} - {data.state}
             </p>
           )}
@@ -125,24 +120,24 @@ export const DeliveryStep = ({ data, updateData, nextStep, prevStep }: DeliveryS
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="complement">Complemento</Label>
+            <Label htmlFor="neighborhood">Bairro *</Label>
             <Input
-              id="complement"
-              placeholder="Apartamento, Bloco, etc."
-              value={data.complement}
-              onChange={(e) => updateData('complement', e.target.value)}
+              id="neighborhood"
+              placeholder="Centro"
+              value={data.neighborhood}
+              onChange={(e) => updateData('neighborhood', e.target.value)}
               className="h-12"
             />
           </div>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="neighborhood">Bairro *</Label>
+          <Label htmlFor="complement">Complemento</Label>
           <Input
-            id="neighborhood"
-            placeholder="Centro"
-            value={data.neighborhood}
-            onChange={(e) => updateData('neighborhood', e.target.value)}
+            id="complement"
+            placeholder="Apartamento, Bloco, etc."
+            value={data.complement}
+            onChange={(e) => updateData('complement', e.target.value)}
             className="h-12"
           />
         </div>

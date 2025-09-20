@@ -67,10 +67,8 @@ export const CheckoutSummary = ({ hasExtraOffer, onToggleOffer }: CheckoutSummar
           </div>
         </CardHeader>
 
-        <CardContent className={cn(
-          "space-y-4 transition-all duration-300",
-          isCollapsed && "lg:block hidden"
-        )}>
+        <CardContent className="space-y-4 transition-all duration-300 hidden">
+          {/* Always collapsed */}
           {/* Price Breakdown */}
           <div className="space-y-3 text-sm">
             <div className="flex justify-between">
