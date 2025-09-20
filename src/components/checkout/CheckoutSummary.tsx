@@ -148,78 +148,7 @@ export const CheckoutSummary = ({ hasExtraOffer, onToggleOffer }: CheckoutSummar
         </CardContent>
       </Card>
 
-      {/* Extra Offer Card */}
-      {showOffer && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="relative"
-        >
-          <Card className="border-warning/20 bg-warning/5">
-            <CardContent className="p-6">
-              <div className="flex items-center space-x-2 mb-4">
-                <AlertCircle className="h-5 w-5 text-warning" />
-                <span className="font-bold text-warning">VOCÊ TEM 1 OFERTA!</span>
-              </div>
-              
-              <Card className="bg-white">
-                <CardContent className="p-4">
-                  <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <img
-                      src={extraOffer}
-                      alt="5 Cuecas Árabes - Oferta especial"
-                      className="w-20 h-20 rounded-lg object-cover flex-shrink-0"
-                    />
-                    
-                    <div className="flex-1 text-center sm:text-left">
-                      <p className="font-medium text-primary text-sm">
-                        ADICIONE +5 CUECAS ÁRABES POR
-                      </p>
-                      <p className="text-sm text-muted-foreground line-through">R$ 49,90</p>
-                      <p className="font-bold text-xl text-primary">R$ 29,00</p>
-                    </div>
-                    
-                     <Button
-                      onClick={handleToggleOffer}
-                      className={cn(
-                        "transition-all duration-300 font-semibold shadow-soft",
-                        hasExtraOffer ? 
-                          "bg-muted hover:bg-muted/80 text-muted-foreground" : 
-                          "bg-primary hover:bg-primary/90 text-primary-foreground"
-                      )}
-                    >
-                      {hasExtraOffer ? (
-                        <>
-                          <Check className="mr-2 h-4 w-4" />
-                          Adicionado
-                        </>
-                      ) : (
-                        <>
-                          <Plus className="mr-2 h-4 w-4" />
-                          Adicionar oferta
-                        </>
-                      )}
-                    </Button>
-                  </div>
-                  
-                  {hasExtraOffer && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      className="mt-4 p-3 bg-success/10 border border-success/20 rounded-lg"
-                    >
-                      <div className="flex items-center space-x-2">
-                        <Check className="h-4 w-4 text-success" />
-                        <p className="text-sm font-medium text-success">Oferta adicionada!</p>
-                      </div>
-                    </motion.div>
-                  )}
-                </CardContent>
-              </Card>
-            </CardContent>
-          </Card>
-        </motion.div>
-      )}
+      {/* Extra Offer Card - Remove this section */}
     </div>
   );
 };

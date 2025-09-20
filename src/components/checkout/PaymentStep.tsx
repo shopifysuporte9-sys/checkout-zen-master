@@ -50,14 +50,9 @@ export const PaymentStep = ({ data, updateData, onFinalize, isLoading }: Payment
               <div className="w-4 h-4 rounded-full bg-primary flex-shrink-0">
                 <div className="w-2 h-2 rounded-full bg-white m-1" />
               </div>
-              <div className="flex items-center space-x-3">
-                <span className="font-semibold text-lg">PIX</span>
-                <div className="w-8 h-8 bg-primary/20 rounded flex items-center justify-center">
-                  <Zap className="h-4 w-4 text-primary" />
-                </div>
-              </div>
+              <span className="font-semibold text-lg">PIX</span>
             </div>
-            <Badge className="bg-success hover:bg-success text-success-foreground">
+            <Badge className="bg-success hover:bg-success text-success-foreground text-xs px-2 py-1">
               5% DE DESCONTO
             </Badge>
           </div>
@@ -75,31 +70,29 @@ export const PaymentStep = ({ data, updateData, onFinalize, isLoading }: Payment
           </div>
 
           {/* Order Bump inside PIX */}
-          {!data.hasExtraOffer && (
-            <div className="mt-6 p-4 bg-warning/10 border border-warning/20 rounded-lg">
-              <div className="flex items-center space-x-2 mb-3">
-                <span className="font-bold text-warning text-sm">🔥 OFERTA ESPECIAL</span>
+          <div className="mt-6 p-4 bg-warning/10 border border-warning/20 rounded-lg">
+            <div className="flex items-center space-x-2 mb-4">
+              <span className="font-bold text-warning">🔥 VOCÊ TEM 1 OFERTA!</span>
+            </div>
+            
+            <div className="flex items-center justify-between">
+              <div className="flex-1">
+                <p className="font-medium text-sm">
+                  ADICIONE +5 CUECAS ÁRABES POR
+                </p>
+                <p className="text-xs text-muted-foreground line-through">R$ 49,90</p>
+                <p className="font-bold text-primary">R$ 29,00</p>
               </div>
               
-              <div className="flex items-center justify-between">
-                <div className="flex-1">
-                  <p className="font-medium text-sm">
-                    Adicione +5 Cuecas Árabes
-                  </p>
-                  <p className="text-xs text-muted-foreground line-through">R$ 49,90</p>
-                  <p className="font-bold text-primary">R$ 29,00</p>
-                </div>
-                
-                <Button
-                  onClick={() => updateData('hasExtraOffer', true)}
-                  size="sm"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                >
-                  Adicionar
-                </Button>
-              </div>
+              <Button
+                onClick={() => updateData('hasExtraOffer', true)}
+                size="sm"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
+                Adicionar
+              </Button>
             </div>
-          )}
+          </div>
         </CardContent>
       </Card>
 

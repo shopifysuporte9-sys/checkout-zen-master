@@ -153,12 +153,14 @@ export const DeliveryStep = ({ data, updateData, nextStep, prevStep }: DeliveryS
               </div>
               <div className="flex items-center space-x-2">
                 <Truck className="h-5 w-5 text-primary" />
-                <span className="font-semibold">Correios</span>
+                <div>
+                  <span className="font-semibold">Correios</span>
+                  <p className="text-sm text-muted-foreground">2 a 5 dias úteis</p>
+                </div>
               </div>
             </div>
             <div className="text-right">
               <span className="font-bold text-success">Grátis</span>
-              <p className="text-sm text-muted-foreground">2 a 5 dias úteis</p>
             </div>
           </div>
         </CardContent>
