@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Pix - Vulluto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f3f0;
+        }
+        .cormorant {
+            font-family: 'Cormorant Garamond', serif;
+        }
+    </style>
+</head>
+<body class="bg-[#f5f3f0] flex flex-col items-center justify-center min-h-screen p-4">
+    <!-- Header -->
+    <div class="flex flex-col items-center justify-center py-4">
+        <img src="https://lojasvelluto.online/cdn/shop/files/logosemfundo_140x@2x.png?v=1757441606" alt="Velluto Logo" class="h-12 w-auto sm:h-16">
+    </div>
+
+    <div class="w-full max-w-sm mx-auto p-6 bg-white rounded-3xl shadow-lg border border-gray-200 sm:p-8">
+        <!-- Main content -->
+        <div class="text-center mt-6">
+            <h2 class="text-xl font-bold text-gray-800 sm:text-2xl">Quase lá...</h2>
+            <p class="text-gray-600 mt-2 text-sm sm:text-base">Pague seu Pix para garantir seu pedido</p>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="flex justify-center items-center mt-6 space-x-2 sm:space-x-4">
+            <div class="flex flex-col items-center">
+                <span id="minutes" class="text-3xl font-semibold bg-[#E4DCD3] text-[#741B16] px-3 py-1 rounded-xl sm:text-4xl sm:px-4 sm:py-2">19</span>
+                <span class="text-xs text-gray-500 mt-1 sm:text-sm">MINUTOS</span>
+            </div>
+            <div class="text-3xl font-semibold text-gray-600 sm:text-4xl">:</div>
+            <div class="flex flex-col items-center">
+                <span id="seconds" class="text-3xl font-semibold bg-[#E4DCD3] text-[#741B16] px-3 py-1 rounded-xl sm:text-4xl sm:px-4 sm:py-2">27</span>
+                <span class="text-xs text-gray-500 mt-1 sm:text-sm">SEGUNDOS</span>
+            </div>
+        </div>
+
+        <p class="text-center text-gray-600 mt-6 text-sm sm:text-base">Pague através do código <span class="font-semibold">PIX copia e cola</span></p>
+
+        <!-- PIX Value -->
+        <div class="text-center mt-4 text-lg text-gray-700">
+            <span class="font-medium">Valor do Pix:</span> <span class="font-bold text-gray-900">R$ 94,05</span>
+        </div>
+
+        <!-- Copy button -->
+        <div class="mt-8">
+            <button id="copyButton" class="w-full bg-[#741B16] hover:bg-[#6A1813] text-white font-bold py-3 px-4 rounded-xl transition duration-300 shadow-md text-sm sm:text-base">
+                Copiar Código
+            </button>
+            <div id="messageBox" class="text-center mt-2 text-xs text-green-600 font-semibold hidden sm:text-sm uppercase">
+                PIX copiado com sucesso!
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="mt-8 p-4 bg-[#F3ECE4] rounded-2xl sm:p-6">
+            <h3 class="font-bold text-gray-800 mb-4 text-sm sm:text-base text-center">COMO PAGAR O SEU PEDIDO</h3>
+            <ul class="space-y-4 text-sm sm:text-base">
+                <li class="flex items-start">
+                    <div class="w-6 h-6 flex items-center justify-center bg-[#741B16] text-white rounded-full font-bold text-sm flex-shrink-0 mt-0.5 sm:w-8 sm:h-8 sm:text-base">1</div>
+                    <p class="ml-3 text-gray-700 leading-tight">
+                        <span class="font-semibold text-gray-900">COPIE O CÓDIGO</span> acima clicando no botão
+                    </p>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 flex items-center justify-center bg-[#741B16] text-white rounded-full font-bold text-sm flex-shrink-0 mt-0.5 sm:w-8 sm:h-8 sm:text-base">2</div>
+                    <p class="ml-3 text-gray-700 leading-tight">
+                        Abra o app do seu banco e entre na área <span class="font-semibold text-gray-900">PIX</span>
+                    </p>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 flex items-center justify-center bg-[#741B16] text-white rounded-full font-bold text-sm flex-shrink-0 mt-0.5 sm:w-8 sm:h-8 sm:text-base">3</div>
+                    <p class="ml-3 text-gray-700 leading-tight">
+                        Escolha a opção <span class="font-semibold text-gray-900">PIX COPIA E COLA</span>
+                    </p>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 flex items-center justify-center bg-[#741B16] text-white rounded-full font-bold text-sm flex-shrink-0 mt-0.5 sm:w-8 sm:h-8 sm:text-base">4</div>
+                    <p class="ml-3 text-gray-700 leading-tight">
+                        Cole o <span class="font-semibold text-gray-900">CÓDIGO</span>, e finalize a compra
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Order number -->
+        <p class="text-center text-sm text-gray-500 mt-8 font-bold">PEDIDO #2196 - RESERVADO</p>
+    </div>
+
+    <script>
+        // Função para a contagem regressiva
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+        const messageBox = document.getElementById('messageBox');
+        
+        // Define a duração do timer
+        const duration = 20 * 60; // 20 minutos em segundos
+        let timer = duration;
+        
+        // Variável de controle para a deduplicação do evento
+        let hasTrackedPurchase = false;
+
+        function updateTimer() {
+            // Verifica se o timer não está em zero antes de atualizar
+            if (timer > 0) {
+                const minutes = parseInt(timer / 60, 10);
+                const seconds = parseInt(timer % 60, 10);
+
+                minutesEl.textContent = minutes < 10 ? "0" + minutes : minutes;
+                secondsEl.textContent = seconds < 10 ? "0" + seconds : seconds;
+
+                timer--;
+            } else {
+                minutesEl.textContent = "00";
+                secondsEl.textContent = "00";
+            }
+        }
+
+        // Inicia o timer na carga da página
+        updateTimer();
+        setInterval(updateTimer, 1000);
+
+        // Função para copiar o código
+        document.getElementById('copyButton').addEventListener('click', () => {
+            const pixCode = "your-dummy-pix-code-here"; // Substitua por um código PIX real
+            const tempInput = document.createElement('textarea');
+            tempInput.value = pixCode;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Mostra a mensagem de sucesso
+            messageBox.classList.remove('hidden');
+            setTimeout(() => {
+                messageBox.classList.add('hidden');
+            }, 3000);
+            
+            // AQUI VOCÊ ADICIONA SEU CÓDIGO DE RASTREAMENTO DO META ADS.
+            // A lógica de deduplicação garante que o evento seja disparado apenas uma vez.
+            if (!hasTrackedPurchase) {
+                 // Exemplo:
+                // if (typeof fbq === 'function') {
+                //     fbq('track', 'Purchase', {
+                //         value: 94.05,
+                //         currency: 'BRL'
+                //     });
+                // }
+                hasTrackedPurchase = true; // Define a variável para true após o primeiro disparo
+            }
+        });
+    </script>
+</body>
+</html>
