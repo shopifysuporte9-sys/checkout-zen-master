@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import mainProduct from "@/assets/cueca-arabe-kit.jpg";
-import extraOffer from "@/assets/cueca-extra-offer.jpg";
+import mainProduct from "@/assets/cueca-produto.jpg";
+import extraOffer from "@/assets/cueca-produto.jpg";
 
 interface CheckoutSummaryProps {
   hasExtraOffer: boolean;

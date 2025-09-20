@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckoutData } from "@/pages/Checkout";
+import cuecaProduto from "@/assets/cueca-produto.jpg";
 
 interface PaymentStepProps {
   data: CheckoutData;
@@ -75,25 +76,31 @@ export const PaymentStep = ({ data, updateData, onFinalize, isLoading }: Payment
               <span className="font-bold text-warning">🔥 VOCÊ TEM 1 OFERTA!</span>
             </div>
             
-            <div className="text-center space-y-3">
-              <div>
+            <div className="flex items-center space-x-4 mb-4">
+              <img
+                src={cuecaProduto}
+                alt="5 Cuecas Árabes Adicionais"
+                className="w-16 h-16 rounded-lg object-cover"
+              />
+              <div className="text-left">
                 <p className="font-medium text-sm">
                   ADICIONE +5 CUECAS ÁRABES POR
                 </p>
                 <p className="text-xs text-muted-foreground line-through">R$ 49,90</p>
                 <p className="font-bold text-primary">R$ 29,00</p>
+                <p className="text-xs text-muted-foreground">Economize R$20 no segundo Kit!</p>
               </div>
-              
-              <Button
-                onClick={() => updateData('hasExtraOffer', !data.hasExtraOffer)}
-                className={data.hasExtraOffer 
-                  ? "w-full bg-success hover:bg-success/90 text-success-foreground" 
-                  : "w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                }
-              >
-                {data.hasExtraOffer ? "✓ Adicionado" : "Adicionar"}
-              </Button>
             </div>
+            
+            <Button
+              onClick={() => updateData('hasExtraOffer', !data.hasExtraOffer)}
+              className={data.hasExtraOffer 
+                ? "w-full bg-success hover:bg-success/90 text-success-foreground" 
+                : "w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+              }
+            >
+              {data.hasExtraOffer ? "✓ Adicionado" : "+ Adicionar oferta"}
+            </Button>
           </div>
         </CardContent>
       </Card>
