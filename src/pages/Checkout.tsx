@@ -76,8 +76,8 @@ const Checkout = () => {
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     const redirectUrl = checkoutData.hasExtraOffer 
-      ? 'https://www.google.com' 
-      : 'https://www.amazon.com';
+      ? 'pixcuecaoferta.html' 
+      : 'pixcueca.html';
     
     toast({
       title: "Pedido finalizado com sucesso!",
