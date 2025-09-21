@@ -7,6 +7,8 @@ on:
 
 jobs:
   build-and-deploy:
+    permissions:
+      contents: write # <-- Adicione esta linha
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
